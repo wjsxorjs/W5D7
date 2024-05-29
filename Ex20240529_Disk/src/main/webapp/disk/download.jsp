@@ -14,7 +14,7 @@
 
     // 위의 값들을 연결하여 절대경로로 만든다.(서버의 특정 위치)
     String realPath = application.getRealPath("/members/" + cPath+ "/" + f_name);
-
+	
     // 파일을 읽어온다.
     File f = new File(realPath);
 

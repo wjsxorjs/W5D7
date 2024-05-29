@@ -44,11 +44,11 @@
 	<form action="myDisk.jsp" method="post">
 		<input type="hidden" name="cPath" value="<%=dir%>" />
 	</form>
+	<script>
+		function movePage(){
+			document.forms[0].submit();
+		}
+	</script>
 </body>
-<script>
-	function movePage(){
-		document.forms[0].submit();
-	}
-</script>
 
 </html>

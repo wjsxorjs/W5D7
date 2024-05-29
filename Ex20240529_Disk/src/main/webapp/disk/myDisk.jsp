@@ -269,7 +269,13 @@
 					<%} %>
 				
 				</td>
-				<td></td>
+				<td>
+					<p class="btn">
+						<a href="javascript:del('<%=f.getName() %>')">
+							삭 제
+						</a>
+					</p>
+				</td>
 			</tr>
 		<% } // for문 끝
 		
@@ -442,7 +448,29 @@
 										// 해당 값을 청소함
 	}
 
+	// 파일을 클릭할 때 호출되는 함수
+	function del(fname){
+		
+		if(confirm("삭제하시겠습니까?")){
+		
+			// 인자로 받은 파일명을 현재문서(document)의
+			// ff 라는 form객체 안에
+			// 이름이 f_name인 요소의 값으로 저장한다.
+			document.ff.f_name.value = fname;
+			
+			// 해당 form의 action을 지정한다.
+			document.ff.action = "delete.jsp";
+			
+			// 해당 form을 서버로 보낸다.
+			document.ff.submit();
+			
+			document.ff.f_name.value = ""; 	// 돌아올 때 파일명이 있어서
+											// 오류가 발생할 수 있으므로
+											// 해당 값을 청소함
+		}
+	}
 
+	
 
 
 	
